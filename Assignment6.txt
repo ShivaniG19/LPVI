@@ -1,0 +1,22 @@
+// arrays in solidity
+
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+contract ArrayBasics{
+    uint[] public intArray;
+    string[5] str = ["pune", "satara", "sangli", "mumbai", "nashik"];
+
+    function getter(uint ind) public view returns (string memory){
+        require((ind<str.length), "out of bound");
+        return str[ind];
+    }
+    
+    function set(uint val) public {
+        intArray.push(val);
+    }
+
+    function getLength() public view returns (uint){
+        return intArray.length;
+    }
+}
